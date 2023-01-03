@@ -19,8 +19,9 @@ Improved inventory management: By understanding which items are frequently purch
 3. Visualize the top and bottom selling products
 4. Visualize the top customers for this business
 5. Genarate association rules to be used to determine the relationships of the products
-6. Identify the frequently purchased products
+6. Identify the frequently purchased products4. Association Rules with Apriori Algorithm
 
+### Association Rules with Apriori Algorithm
 Association Rules are based on the concept of strong rules, are widely used to analyze retail basket or transaction data and are intended to identify strong rules discovered in transaction data using measures of interestingness. Association rules are used to unveil the relationship between one item and another when purchased, mainly denotes as X and Y. X is the main product being purchased while Y is the best product to be bought together with X. These rules are developed by three terminologies;
 
 1. Support - It is used to represent the number of transactions in which product X appears from thee total number of transactions. That is, the popularity of product X.
