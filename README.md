@@ -37,3 +37,6 @@ Increased sales: By bundling or cross-selling items that are frequently purchase
 Enhanced marketing efforts: Market basket analysis can help a retailer understand which items are most likely to be of interest to their customers, which can help them tailor their marketing efforts to better target those customers.
 
 Improved inventory management: By understanding which items are frequently purchased together, a retailer can better predict which items they will need to have in stock at any given time, which can help them manage their inventory more efficiently.
+
+## If you are willing to collaborate and help me improve on the project, I'd be available 
+You can communicate with me on my Twitter for any inquiries
