@@ -2,16 +2,6 @@ Market basket analysis is a data mining technique that is used to identify assoc
 
 For example, a market basket analysis of a grocery store's transaction data might reveal that customers who purchase bread are very likely to also purchase butter. This information could be used to create a product bundle (e.g., a "baking essentials" bundle including bread and butter) or to cross-sell butter to customers who are purchasing bread (e.g., by placing the butter near the bread in the store).
 
-Benefits of market basket analysis include:
-
-Improved customer satisfaction: By understanding which items are frequently purchased together, a retailer can make it easier for customers to find everything they need in one place, which can improve the overall shopping experience.
-
-Increased sales: By bundling or cross-selling items that are frequently purchased together, a retailer can increase sales of those items.
-
-Enhanced marketing efforts: Market basket analysis can help a retailer understand which items are most likely to be of interest to their customers, which can help them tailor their marketing efforts to better target those customers.
-
-Improved inventory management: By understanding which items are frequently purchased together, a retailer can better predict which items they will need to have in stock at any given time, which can help them manage their inventory more efficiently.
-
 ### For this project we will be;
 
 1. Analyse and preprocess the dataset
@@ -36,3 +26,17 @@ The method may take some time to construct if all rules are taken into account, 
 1. Subsets of the frequent itemset must all be frequent.
 2. Similar to this, the algorithm operates in such a way that iterations take place with frequent itemsets and a minimum support value is determined if an infrequent subset has an infrequent parent set. Until removal is impossible, itemsets and subsets are disregarded if their support falls below the threshold.
 The method may take some time to construct if all rules are taken into account, thus if the lift of these chosen itemsets (rules) is less than a threshold, the rules are removed.
+
+
+### Benefits of market basket analysis include:
+
+Improved customer satisfaction: By understanding which items are frequently purchased together, a retailer can make it easier for customers to find everything they need in one place, which can improve the overall shopping experience.
+
+Increased sales: By bundling or cross-selling items that are frequently purchased together, a retailer can increase sales of those items.
+
+Enhanced marketing efforts: Market basket analysis can help a retailer understand which items are most likely to be of interest to their customers, which can help them tailor their marketing efforts to better target those customers.
+
+Improved inventory management: By understanding which items are frequently purchased together, a retailer can better predict which items they will need to have in stock at any given time, which can help them manage their inventory more efficiently.
+
+## If you are willing to collaborate and help me improve on the project, I'd be available 
+You can communicate with me on my Twitter for any inquiries
