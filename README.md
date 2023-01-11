@@ -38,5 +38,8 @@ Enhanced marketing efforts: Market basket analysis can help a retailer understan
 
 Improved inventory management: By understanding which items are frequently purchased together, a retailer can better predict which items they will need to have in stock at any given time, which can help them manage their inventory more efficiently.
 
+Please note this also includes my 1st Power BI dashboard,
+ignore it, it has nothing to do with this project. I just couldn't find a file to save it
+
 ## If you are willing to collaborate and help me improve on the project, I'd be available 
 You can communicate with me on my Twitter for any inquiries
