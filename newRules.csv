@@ -1,18 +1,18 @@
-Left Hand Side 1,Left Hand Side 2,Right Hand Side,Support(%),Confidence(%),Lift,Rules
-rolls/buns,other vegetables,soda,0.11361358,10.75949367,1.108013103,rolls/buns + other vegetables -> soda
-soda,other vegetables,rolls/buns,0.11361358,11.72413793,1.065785394,soda + other vegetables -> rolls/buns
-soda,rolls/buns,other vegetables,0.11361358,14.04958678,1.15065116,soda + rolls/buns -> other vegetables
-rolls/buns,other vegetables,whole milk,0.120296732,11.39240506,0.721390423,rolls/buns + other vegetables -> whole milk
-soda,other vegetables,whole milk,0.11361358,11.72413793,0.742396428,soda + other vegetables -> whole milk
-yogurt,other vegetables,whole milk,0.11361358,14.04958678,0.889648612,yogurt + other vegetables -> whole milk
-whole milk,yogurt,other vegetables,0.11361358,10.17964072,0.833705332,whole milk + yogurt -> other vegetables
-sausage,rolls/buns,whole milk,0.11361358,21.25,1.345593525,sausage + rolls/buns -> whole milk
-sausage,whole milk,rolls/buns,0.11361358,12.68656716,1.15327524,sausage + whole milk -> rolls/buns
-soda,rolls/buns,whole milk,0.100247277,12.39669421,0.784984069,soda + rolls/buns -> whole milk
-yogurt,rolls/buns,whole milk,0.133663035,17.09401709,1.082428175,yogurt + rolls/buns -> whole milk
-whole milk,yogurt,rolls/buns,0.133663035,11.9760479,1.088685327,whole milk + yogurt -> rolls/buns
-sausage,soda,whole milk,0.106930428,17.97752809,1.138373901,sausage + soda -> whole milk
-sausage,whole milk,soda,0.106930428,11.94029851,1.229612433,sausage + whole milk -> soda
-sausage,whole milk,yogurt,0.147029339,16.41791045,1.911760265,sausage + whole milk -> yogurt
-sausage,yogurt,whole milk,0.147029339,25.58139535,1.61986635,sausage + yogurt -> whole milk
-whole milk,yogurt,sausage,0.147029339,13.17365269,2.182916559,whole milk + yogurt -> sausage
+,Left Hand Side 1,Left Hand Side 2,Right Hand Side,Support(%),Confidence(%),Lift,Rules
+0,rolls/buns,other vegetables,soda,0.11361358016440554,10.759493670886075,1.108013102529032,rolls/buns + other vegetables -> soda
+1,soda,other vegetables,rolls/buns,0.11361358016440554,11.724137931034482,1.0657853940587423,soda + other vegetables -> rolls/buns
+2,soda,rolls/buns,other vegetables,0.11361358016440554,14.049586776859504,1.150651160055549,soda + rolls/buns -> other vegetables
+3,rolls/buns,other vegetables,whole milk,0.12029673193878233,11.39240506329114,0.7213904230301538,rolls/buns + other vegetables -> whole milk
+4,soda,other vegetables,whole milk,0.11361358016440554,11.724137931034482,0.7423964276854379,soda + other vegetables -> whole milk
+5,yogurt,other vegetables,whole milk,0.11361358016440554,14.049586776859504,0.8896486116891612,yogurt + other vegetables -> whole milk
+6,yogurt,whole milk,other vegetables,0.11361358016440554,10.179640718562874,0.8337053315372539,yogurt + whole milk -> other vegetables
+7,sausage,rolls/buns,whole milk,0.11361358016440554,21.25,1.345593525179856,sausage + rolls/buns -> whole milk
+8,sausage,whole milk,rolls/buns,0.11361358016440554,12.686567164179104,1.1532752398396837,sausage + whole milk -> rolls/buns
+9,soda,rolls/buns,whole milk,0.10024727661565194,12.396694214876034,0.7849840691374952,soda + rolls/buns -> whole milk
+10,yogurt,rolls/buns,whole milk,0.13366303548753591,17.094017094017094,1.0824281751069733,yogurt + rolls/buns -> whole milk
+11,yogurt,whole milk,rolls/buns,0.13366303548753591,11.976047904191619,1.0886853267947703,yogurt + whole milk -> rolls/buns
+12,sausage,soda,whole milk,0.10693042839002875,17.97752808988764,1.138373901011379,sausage + soda -> whole milk
+13,sausage,whole milk,soda,0.10693042839002875,11.940298507462687,1.2296124333596987,sausage + whole milk -> soda
+14,sausage,whole milk,yogurt,0.1470293390362895,16.417910447761194,1.9117602648237413,sausage + whole milk -> yogurt
+15,yogurt,sausage,whole milk,0.1470293390362895,25.581395348837212,1.6198663504217148,yogurt + sausage -> whole milk
+16,yogurt,whole milk,sausage,0.1470293390362895,13.17365269461078,2.1829165589087607,yogurt + whole milk -> sausage
