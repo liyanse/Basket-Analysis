@@ -1,41 +1,32 @@
-import pandas as pd
+import pandas as pd 
 from mlxtend.frequent_patterns import apriori
-from mlxtend.preprocessing import TransactionEncoder
+
+# Load the Groceries dataset
+data = pd.read_csv('Groceries_dataset.csv')
+
+# Transform the data into a one-hot encoding
+data_hot_encoded = data.drop('Item(s)', axis=1).apply(pd.Series.value_counts)
+data_hot_encoded = data_hot_encoded.fillna(0).astype(int).reset_index()
+
+# Run the Apriori algorithm to generate frequent itemsets
+frequent_itemsets = apriori(data_hot_encoded, min_support=0.01, use_colnames=True)
+
+# Generate the rules from the frequent itemsets
+from mlxtend.frequent_patterns import association_rules
+rules = association_rules(frequent_itemsets, metric="lift", min_threshold=1)
+
+# Use FASTAPI to deploy the model
 from fastapi import FastAPI
 
 app = FastAPI()
 
-@app.get("/recommendations")
-def get_recommendations(product: str):
-    # Read in the dataset
-    df = pd.read_csv("Groceries_dataset.csv")
-
-    # Convert the dataframe into a list of lists
-    data = df.values.tolist()
-
-    # Use the TransactionEncoder to convert the list of lists into a one-hot encoded numpy array
-    te = TransactionEncoder()
-    te_ary = te.fit(data).transform(data)
-
-    # Create a dataframe from the one-hot encoded numpy array
-    df = pd.DataFrame(te_ary, columns=te.columns_)
-
-    # Use the apriori function to find frequent itemsets
-    frequent_itemsets = apriori(df, min_support=0.05, use_colnames=True)
-
-    # Create a dictionary of the items and their corresponding support values
-    items = frequent_itemsets['itemsets'].apply(lambda x: x.name)
-    support = frequent_itemsets['support'].tolist()
-    item_support = dict(zip(items, support))
-
-    # Find the products that are frequently bought with the input product
-    recommendations = []
-    for itemset in frequent_itemsets['itemsets']:
-        if product in itemset:
-            recommendations.extend(list(itemset))
-    recommendations = list(set(recommendations) - set([product]))
-
-    # Sort the recommendations by support value and return the top 5
-    recommendations = sorted(recommendations, key=lambda x: item_support[x], reverse=True)[:5]
-    return recommendations
-
+@app.get("/")
+def read_item(item: str):
+    # Get the rules related to the input item
+    item_rules = rules[rules['antecedents'] == {item}]
+    
+    # Sort the rules by the lift in descending order
+    item_rules = item_rules.sort_values(by='lift', ascending=False)
+    
+    # Return the consequents of the top 5 rules
+    return item_rules['consequents'].head().to_list()
