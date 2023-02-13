@@ -21,27 +21,17 @@ rules = association_rules(frequent_itemsets, metric="support", min_threshold=0.0
 rules
 
 #lift değerine göre sıralıyoruz ve ürün tavsiyesi verecek olan fonksiyonu yazıyoruz
-rules = rules.sort_values("lift", ascending=False).reset_index(drop=True)
-from fastapi import FastAPI
+rules = rules.sort_values("lift", ascending=False).reset_index(drop=True)  
 
-# 2. Create the app object
-app = FastAPI()
-
-@app.get('/hello')
-def index():
-    return {'Welcome To Our Product Recommender API'}
-
-@app.post('/predictdemand')
-def product_rec( product, stop_num = 3):
+def product_rec(dataframe, product, stop_num = 3):
     counter = 0
     rec_list = []
-    for index, row in enumerate(rules["antecedents"]):        
+    for index, row in enumerate(dataframe["antecedents"]):        
         for item in list(row):
             if item == product:
-                rec_list.append(list(rules["consequents"][index])[0])
+                rec_list.append(list(dataframe["consequents"][index])[0])
                 counter += 1
                 if counter == stop_num:
                     break
     return rec_list
-product_rec(rules, "")
-
+product_rec(rules, "yogurt")
