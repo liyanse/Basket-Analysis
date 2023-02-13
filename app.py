@@ -1,16 +1,44 @@
 from fastapi import FastAPI
-from mlxtend.frequent_patterns import apriori
 import pickle
+import uvicorn ##ASGI
+from urllib import response
+import pandas as pd
+from pydantic import BaseModel
+from mlxtend.frequent_patterns import apriori
+from mlxtend.frequent_patterns import association_rules
 
-# create the fastapi object
+# 2. Create the app object
 app = FastAPI()
 
-# load the pickle file
-model_file = open('basketAnalysis.pickle', 'rb')
-model = pickle.load(model_file)
+@app.get('/')
+def index():
+    return {'Welcome To Our Product Recommender API'}
 
-# create the endpoint
-@app.get("/market_basket/{product1}/{product2}/{support}/{confidence}")
-def market_basket_recommender(product1: str, product2: str, support: float, confidence: float, lift: float):
-    recommendations = model.apriori(product1, product2, support, confidence, lift)
-    return {"recommendations": recommendations}
+class filter(BaseModel):
+    
+    start_date:str
+    end_date:str
+
+class product(BaseModel):
+    product_id:str
+    
+    
+@app.post('/predictbasket')
+async def product_rec(filter:filter):
+    response = filter.dict()
+    response_df = pd.DataFrame(response)
+    cols = ['member_number', 'date','itemDescription']
+    response_df[cols] = response_df[cols].applymap(lambda x: True if x>0 else False)
+    model = pickle.load(open("basket.pkl", "rb"))
+    counter = 0
+    rec_list = []
+    for index, row in enumerate(dataframe["antecedents"]):        
+        for item in list(row):
+            if item == product:
+                rec_list.append(list(dataframe["consequents"][index])[0])
+                counter += 1
+                if counter == stop_num:
+                    break
+    return rec_list
+
+
