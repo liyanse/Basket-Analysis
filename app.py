@@ -1,16 +1,20 @@
-from fastapi import FastAPI
-from pydantic import BaseModel
-from mlxtend.frequent_patterns import apriori
 import pickle
+from typing import List
+from fastapi import FastAPI
 
-# Initialize the FastAPI
 app = FastAPI()
 
-@app.get("/predict/{product}")
-def get_recommendation(product: str):
-    # load the model
-    model = pickle.load(open('basketAnalysis.pickle','rb'))
-    # make prediction
-    results = model[model.Antecedent == {product}]
-    # return results
-    return results
+## loading my apriori algorithm
+with open('association_rules.pkl', 'rb') as f:
+    apriori_model = pickle.load(f)
+    
+    
+@app.post("/recommend")
+def recommend_product(products: List[str]):
+    # perform basket analysis on the list of products
+    recommended_product = apriori_model.final_result(products)
+    return {"recommended_product": recommended_product}
+    
+    
+    
+    
