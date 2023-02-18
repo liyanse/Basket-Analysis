@@ -8,9 +8,8 @@ with open('apriori_model.pkl','rb')as f:
 
 @app.get('/products/{product_name}')
 def similar_products(product_name:  str):
-    results = [result[1] for result in rules if result[0] == product_name]
+    results = [rule[2] for rule in rules if rule[1] == product_name]
     
     return{'similar products are': results}
-
        
     
