@@ -41,3 +41,8 @@ Improved inventory management: By understanding which items are frequently purch
 ## The Rules
 I developed 2 types of rules, one by encoding the products and the other by the items in a basket
 I have each of the rules updated in the Basket Analysis notebook
+
+## API
+I chose to deploy this algorithm with fastapi where a user inputs a product and it recommends other products based on the association rules developed.
+This is a snippet of what the deployment looks like;
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sqetevka9vwjk3f4ugwf.png)
