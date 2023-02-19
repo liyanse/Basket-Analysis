@@ -28,16 +28,16 @@ The method may take some time to construct if all rules are taken into account, 
 The method may take some time to construct if all rules are taken into account, thus if the lift of these chosen itemsets (rules) is less than a threshold, the rules are removed.
 
 
-### Benefits of market basket analysis include:
+### Getting Started
+The requirements for this project are,
+Have the following installed;
+  - apriori
+  - pandas
+  - FastAPI
+  - Uvicorn
+Clone this repository
 
-Improved customer satisfaction: By understanding which items are frequently purchased together, a retailer can make it easier for customers to find everything they need in one place, which can improve the overall shopping experience.
-
-Increased sales: By bundling or cross-selling items that are frequently purchased together, a retailer can increase sales of those items.
-
-Enhanced marketing efforts: Market basket analysis can help a retailer understand which items are most likely to be of interest to their customers, which can help them tailor their marketing efforts to better target those customers.
-
-Improved inventory management: By understanding which items are frequently purchased together, a retailer can better predict which items they will need to have in stock at any given time, which can help them manage their inventory more efficiently.
-
-## The Rules
-I developed 2 types of rules, one by encoding the products and the other by the items in a basket
-I have each of the rules updated in the Basket Analysis notebook
+## API
+I chose to deploy this algorithm with fastapi where a user inputs a product and it recommends other products based on the association rules developed.
+This is a snippet of what the deployment looks like;
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/sqetevka9vwjk3f4ugwf.png)
