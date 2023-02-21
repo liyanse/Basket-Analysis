@@ -1,0 +1,6 @@
+pandas
+numpy
+apriori
+pickle
+fastapi
+uvicorn
