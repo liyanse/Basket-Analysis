@@ -1,13 +1,9 @@
-FROM python:3-slim-buster
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
 
-RUN mkdir /code
+COPY ./src /app
 
-WORKDIR /code
-
-COPY requirements.txt .
+WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-COPY . .
-
-CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--port=80"]
+CMD ["uvicorn", "app:app", "--host=0.0.0.0", "--port=80"]
