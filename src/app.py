@@ -21,3 +21,4 @@ async def get_recommendations(product:str):
     recommendations = [x for x in rules if product in x[0]]
     # Return the recommendations
     return {"recommendations": recommendations}
+
