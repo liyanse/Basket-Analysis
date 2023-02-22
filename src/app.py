@@ -3,7 +3,7 @@ from fastapi import FastAPI
 import pickle
 
 ## Create FASTAPI instance
-app = FastAPI()
+app = FastAPI(__name__)
 
 ## opening the pickle file for predictions
 with open('apriori_model.pkl','rb')as f:
@@ -21,3 +21,7 @@ async def get_recommendations(product:str):
     recommendations = [x for x in rules if product in x[0]]
     # Return the recommendations
     return {"recommendations": recommendations}
+
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0")
