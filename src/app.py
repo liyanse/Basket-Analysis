@@ -22,3 +22,6 @@ async def get_recommendations(product:str):
     # Return the recommendations
     return {"recommendations": recommendations}
 
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8001)
