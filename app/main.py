@@ -15,7 +15,7 @@ async def read_root():
     return {"message": "Welcome to the Recommendations platform"}
     
  
-@app.post("/recommendations/{product}")
+@app.post("/recommendations/")
 async def get_recommendations(product:str):
     # Get the recommendations based on the input product
     recommendations = [x for x in rules if product in x[0]]
