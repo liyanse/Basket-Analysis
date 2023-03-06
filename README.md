@@ -35,7 +35,23 @@ Have the following installed;
   - pandas
   - FastAPI
   - Uvicorn
-Clone this repository
+1. The first srep is to clone this repo 
+$ git clone https://github.com/liyanse/Basket-Analysis
+
+2. Install the necessary libraries
+I have definetely not included all the libraries used in this project but I have listed some of them in the requirements.txt file
+
+ 3. Run the main.py file with uvicorn (since we are using FASTApi, we have to use Uvicorn server to run our endpoint)
+ 4. Alternatively, you can build a docker image from the docker file provided in the project, just run the following commands
+ $ docker build -t 'imagename' .  
+ 
+ Then run the image file as; 
+ $ docker run -p 80:80 'imagename'
+ 
+ The termnal should give you a link and when you open the link, replace it with
+ localhost:80 , it should return the message "Welcome to the Recommendations platform"
+ 
+
 
 ## API
 I chose to deploy this algorithm with fastapi where a user inputs a product and it recommends other products based on the association rules developed.
